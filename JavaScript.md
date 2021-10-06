@@ -1,9 +1,9 @@
 # Table of Contents
 
 * [Week One](#week-one)
-** [What is JavaScript?](#what-is-javascript?)
-** [Objects](#objects)
-** [Classes](#classes)
+* * [What is JavaScript?](#what-is-javascript?)
+* * [Objects](#objects)
+* * [Classes](#classes)
 * [References](#references)
 
 ## Week One
