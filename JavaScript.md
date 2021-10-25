@@ -67,7 +67,86 @@ document.getElementById("demo").innerHTML=
 "My car is " + myCar.age(year) + " years old.";
 ```
 
+## Week Two to Three
+###### October 12th to 24th
+
+### Supported Paradigms
+![image](https://user-images.githubusercontent.com/60442665/138610018-64461b55-20be-44f3-a32f-d1ae77fb1c34.png)
+```javascript
+const paradigms = [
+  {name: 'Imperative', support: true, parent: null},
+  {name: 'Declarative', support: true, parent: null},
+  {name: 'Functional', support: true, parent: 'Declarative'},
+  {name: 'Object-Oriented', support: true, parent: 'Imperative'},
+  {name: 'Event-Driven', support: true, parent: null},
+  {name: 'Quantum', support: false, parent: null},
+  {name: 'Symbolic', support: false, parent: null}
+]
+/* Imperative Pattern */
+for (let i = 0; i < paradigms.length; i++) {
+  if (paradigms[i].support === true) {
+    console.log(paradigms[i])
+  }
+}
+/* Declarative Pattern */
+const jsParadigms = paradigms.filter((p) => p.support === true)
+console.log(jsParadigms)
+```
+JavaScript is a good mix of Imperative and Declarative Programming. 
+
+#### Functional Programming
+First-Class Functions - functions can be assigned to variables and can be passed into other functions. Functions can also be returned from other functions.
+```javascript
+function writeHello() {
+  return function () {
+    console.log("Something")
+  }
+}
+const something = function () {
+  console.log("Something")
+}
+```
+Lambda Syntax - as shown above, functions can be passed around as data using the "fat arrow" ```=>```
+
+Closures - functions can be nested inside eachother. Closures have three scopes: local, outer functions, and global.
+
+Being able to use functions in this way creates a lot of oppurtunity for the programmer to be creative and use less code to accomplish more. Although less reusable, it saves a lot of time and can be easier to read.
+
+#### Object-Oriented Programming: Prototype-based
+In Object Oriented Programming, programs are written as collections of classes and objects which communicate with eachother. The most basic and smallest entity is the object, which many different kinds of computations are performed on. This is more focused on the data itself, rather than the procedure. 
+
+JavaScript reuses existing objects that serve as prototypes: there is no pure inheritance or extensions.
+```javascript
+function Student() {
+    this.name = 'John';
+    this.gender = 'Male';
+}
+var studObj1 = new Student();
+studObj1.age = 15; // add an age property to student
+alert(studObj1.age); // 15
+
+var studObj2 = new Student();
+alert(studObj2.age); // undefined
+```
+As we can see, studObj2 has no instance of age property since it is defined only on the studObj1 instance. We can add new properties to be shared across all instances using prototypes:
+```javascript
+function Student() {
+    this.name = 'John';
+    this.gender = 'M';
+}
+Student.prototype.age = 15;
+
+var studObj1 = new Student();
+alert(studObj1.age); // 15
+
+var studObj2 = new Student();
+alert(studObj2.age); // 15
+```
+
 ## References
 * [What is JavaScript?](https://eloquentjavascript.net/00_intro.html#h_GlF1Kuv0JF)
 * [Objects](https://www.w3schools.com/js/js_object_definition.asp)
 * [Classes](https://www.w3schools.com/js/js_class_intro.asp)
+* [Paradigms](https://javascript.plainenglish.io/what-are-javascript-programming-paradigms-3ef0f576dfdb)
+* [More Paradigms](https://ageek.dev/js-paradigms)
+* [Prototype Objects](https://www.tutorialsteacher.com/javascript/prototype-in-javascript#:~:text=The%20answer%20is%20Prototype.%20The%20prototype%20is%20an,visible.%20Every%20function%20includes%20prototype%20object%20by%20default.)
