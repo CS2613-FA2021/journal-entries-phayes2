@@ -1,13 +1,18 @@
 # Table of Contents
 
 * [Week One](#week-one)
-* [What is Racket?](#what-is-racket?)
+* [Intro to Racket](#intro-to-racket)
 * [Syntax Stuff](#syntax-stuff)
 * [Recursion!](#recursion)
+* [Final Weeks](#final-weeks)
+* [More Syntax](#more-syntax)
+* [Data Structures & Libraries](#data-structures&libraries)
+* [Supported Paradigms](#supported-paradigms)
+* [Under the Hood](#under-the-hood)
 
 ## Week One
 ###### October 25th to November 5th
-### What is Racket?
+### Intro to Racket
 
 Racket seems to be pretty strange to me (and I'm sure strange for everyone else in this class). Apparently Racket was first developed as a tool to help beginner programmers learn how to code in the mid-90s. I guess we will see how easy it is to pick up if it is supposed to be geared more towards those who don't have a great grasp on programming concepts. 
 
@@ -86,3 +91,44 @@ Whats interesting there is the set! declration and the #:final. Here is the recu
 ```
 
 Slightly easier and is starting to make more sense syntax wise for me. I feel the arithmetic operations will take some getting used to.
+
+## Final Weeks
+###### November 5th to 19th
+### More Syntax
+
+The things that really tripped me up for Q2 for this assignment are function vs. variable declarations. They look really similar and caused me some trouble:
+
+```racket
+(define (factorial n) ; defines a function named factorial with a parameter of n
+(define factorial n) ; defines a variable named function that is set to the value of n
+```
+
+Also, conditional statements were useful but kind of tricky:
+
+```racket
+(if (and (> n number)(divisible n number)) ; checks if both (n > number) and that the function divisible is true
+        (set! lst (remove n lst)) ; set variable lst to what is returned from removing n from lst. You need to use set! to override lst
+        (void)))  ; the above statement is called if the if statement is true. The void statement is the else
+```
+
+I used the above code in Q2. I could probably find a way to do this without the if statement so I can get rid of the useless void statement, but it works so I can be happy with it.
+
+### Data Structures & Libraries
+
+Structs are pretty simple but I didn't use them for the assignment:
+
+```racket
+(struct car(Make Model Year Color Mileage))
+(define MyCar
+  (car "Buick" "Car-Model" "Black" 123456)
+)
+```
+
+Racket also have tons of libraries available, we used some in Q1 and A3 for the assignment.
+
+### Supported Paradigms
+
+Racket is imperative, procedural, structured
+
+### Under the Hood
+
